@@ -9,6 +9,7 @@ COPY ["dotaApi.csproj", "dotaApi/"]
 RUN dotnet restore "dotaApi/dotaApi.csproj"
 COPY . .
 WORKDIR "/src/dotaApi"
+RUN ls
 RUN dotnet build "dotaApi.csproj" -c Release -o /app/build
 
 FROM build AS publish
