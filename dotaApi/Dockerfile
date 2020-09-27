@@ -7,5 +7,5 @@ RUN dotnet publish -c Release -o out
 
 FROM mcr.microsoft.com/dotnet/core/aspnet:3.1
 WORKDIR /app
-COPY --from=build /app/out .
+COPY --from=build /src/out .
 ENTRYPOINT ["dotnet", "dotaApi.dll"]
