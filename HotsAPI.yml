@@ -1,8 +1,16 @@
-# Docker
-# Build and push an image to Azure Container Registry
-# https://docs.microsoft.com/azure/devops/pipelines/languages/docker
 trigger:
-- master
+  branches:
+    include:
+    - master
+  paths:
+    include:
+    - hotsApi/*
+    - HotsAPI.yml
+    exclude:
+    - dotaApi/*
+    - DotaAPI.yml
+
+
 
 resources:
 - repo: self

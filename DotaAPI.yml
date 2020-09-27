@@ -3,7 +3,16 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/docker
 
 trigger:
-- master
+  branches:
+    include:
+    - master
+  paths:
+    include:
+    - dotaApi/*
+    - DotaAPI.yml
+    exclude:
+    - hotsApi/*
+    - HotsAPI.yml
 
 resources:
 - repo: self
