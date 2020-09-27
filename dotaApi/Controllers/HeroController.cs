@@ -9,7 +9,7 @@ using RestSharp;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace helloworld_api.Controllers
+namespace dotaApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]

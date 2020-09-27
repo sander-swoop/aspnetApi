@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace helloworld_api
+namespace dotaApi
 {
     public class Hero
     {

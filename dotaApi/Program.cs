@@ -9,7 +9,7 @@ using Microsoft.Extensions.Logging;
 
 using RestSharp;
 
-namespace helloworld_api
+namespace dotaApi
 {
     public class Program
     {

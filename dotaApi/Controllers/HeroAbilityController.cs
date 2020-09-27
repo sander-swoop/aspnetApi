@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
 using RestSharp;
-using System.Text.Json;
-using System.Text.Json.Serialization;
+using dotaApi;
 
-namespace helloworld_api.Controllers
+namespace dotaApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]
@@ -22,15 +18,15 @@ namespace helloworld_api.Controllers
             _logger = logger;
         }
 
-        [HttpGet("{heroName}")]
-        public HeroAbility Get(string heroName)
+        [HttpGet("{hero}")]
+        public HeroAbility Get(string hero)
         {
             var client = new RestClient("https://api.opendota.com/api");
             var request = new RestRequest("constants/hero_abilities", DataFormat.Json);
 
             var response = client.Get<Dictionary<string, HeroAbility>>(request);
 
-            return response.Data[heroName];
+            return response.Data[hero];
         }
 
         [HttpGet]

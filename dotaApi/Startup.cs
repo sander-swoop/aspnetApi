@@ -11,7 +11,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Prometheus;
 
-namespace helloworld_api
+namespace dotaApi
 {
     public class Startup
     {
@@ -32,6 +32,7 @@ namespace helloworld_api
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             app.UseMetricServer();
+            app.UseHttpMetrics();
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
