@@ -7,3 +7,5 @@ FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build
 WORKDIR /src
 COPY dotaApi.csproj ./
 RUN cat ./dotaApi.csproj
+COPY * ./
+RUN ls ./
