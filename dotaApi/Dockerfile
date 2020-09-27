@@ -5,10 +5,10 @@ ENV ASPNETCORE_URLS=http://*:5000
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build
 WORKDIR /src
-COPY ["aspnetApi/dotaApi/dotaApi.csproj", "aspnetApi/dotaApi/"]
-RUN dotnet restore "aspnetApi/dotaApi/dotaApi.csproj"
+COPY ["dotaApi.csproj", "dotaApi/"]
+RUN dotnet restore "dotaApi/dotaApi.csproj"
 COPY . .
-WORKDIR "/src/aspnetApi/dotaApi"
+WORKDIR "/src/dotaApi"
 RUN dotnet build "dotaApi.csproj" -c Release -o /app/build
 
 FROM build AS publish
