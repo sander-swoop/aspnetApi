@@ -8,4 +8,5 @@ RUN dotnet publish -c Release -o out
 FROM mcr.microsoft.com/dotnet/core/aspnet:3.1
 WORKDIR /app
 COPY --from=build /src/out .
+ENV ASPNETCORE_URLS=http://*:5000
 ENTRYPOINT ["dotnet", "dotaApi.dll"]
