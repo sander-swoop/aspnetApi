@@ -11,3 +11,4 @@ COPY --from=build /src/out .
 ENV ASPNETCORE_URLS=http://*:5000
 ENTRYPOINT ["dotnet", "dotaApi.dll"]
 
+
